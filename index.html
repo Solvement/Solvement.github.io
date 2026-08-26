@@ -291,18 +291,6 @@
     text-transform: uppercase;
   }
 
-  .proof-strip { border-bottom: 1px solid var(--rule); background: var(--paper-deep); }
-  .proof-grid { display: grid; grid-template-columns: 1.2fr repeat(4, 1fr); align-items: stretch; }
-  .proof-intro, .proof-item { padding: 1.15rem 1.25rem; border-right: 1px solid var(--rule); }
-  .proof-intro { padding-left: 0; }
-  .proof-item:last-child { border-right: 0; }
-  .proof-intro span, .proof-item span {
-    display: block; font-family: var(--mono); font-size: .58rem; letter-spacing: .11em;
-    text-transform: uppercase; color: var(--muted); margin-bottom: .2rem;
-  }
-  .proof-intro strong { font-family: var(--display); font-size: .9rem; }
-  .proof-item strong { font-family: var(--display); color: var(--annotate); font-size: 1.04rem; }
-
   /* ── Sidebar + content shell ───────────────────────────────── */
   .shell {
     display: grid;
@@ -487,6 +475,24 @@
   }
   .skill-row dd { margin: 0; font-size: 0.96rem; color: var(--ink-soft); }
 
+  .writing-row {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem;
+    align-items: end; max-width: 42rem; padding: 1.35rem 0;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule-soft);
+  }
+  .writing-row p { margin: 0; }
+  .writing-row .account {
+    font-family: var(--mono); font-size: .7rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted); margin-top: .5rem;
+  }
+  .copy-handle {
+    font-family: var(--mono); font-size: .65rem; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--structure); background: transparent;
+    border: 1px solid var(--rule); padding: .55rem .75rem; cursor: pointer;
+  }
+  .copy-handle:hover { border-color: var(--structure); }
+  .copy-handle:active { transform: translateY(1px); }
+
   /* ── Footer ────────────────────────────────────────────────── */
   footer { background: var(--paper-deep); border-top: 1px solid var(--rule); padding: 3.4rem 0 3.8rem; }
   .sign {
@@ -511,9 +517,6 @@
     .wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
     .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
     .hero-visual { min-height: 28rem; max-width: 34rem; width: 100%; }
-    .proof-grid { grid-template-columns: repeat(2, 1fr); }
-    .proof-intro { grid-column: 1 / -1; padding-left: 1.25rem; border-bottom: 1px solid var(--rule); }
-    .proof-item:nth-child(3) { border-right: 0; }
     .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
     .sidenav {
       position: static; margin: 0; padding: 1.4rem 0 0;
@@ -532,6 +535,8 @@
     .sidenav .aside { display: none; }
     header.hero { padding-top: 3.2rem; }
     .skill-row { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
+    .writing-row { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .copy-handle { justify-self: start; }
   }
   @media (max-width: 560px) {
     .brand span { display: none; }
@@ -541,9 +546,6 @@
     h1 { font-size: clamp(3rem, 17vw, 4.2rem); }
     .hero-visual { min-height: 23rem; }
     .facts { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem 1rem; }
-    .proof-item { padding: 1rem; }
-    .proof-item:nth-child(odd) { border-right: 0; }
-    .proof-item strong { font-size: .93rem; }
   }
 </style>
 </head>
@@ -599,16 +601,6 @@
   </div>
 </header>
 
-<div class="proof-strip" aria-label="Selected engineering outcomes">
-  <div class="wrap proof-grid">
-    <div class="proof-intro"><span>Selected outcomes</span><strong>Evidence before adjectives.</strong></div>
-    <div class="proof-item"><span>Retrieval R@10</span><strong>0.58 → 0.90</strong></div>
-    <div class="proof-item"><span>Burst throughput</span><strong>1,000+ QPS</strong></div>
-    <div class="proof-item"><span>Inspector agreement</span><strong>76% → 91%</strong></div>
-    <div class="proof-item"><span>Fault recovery</span><strong>12 / 12</strong></div>
-  </div>
-</div>
-
 <div class="wrap">
   <div class="shell">
 
@@ -619,13 +611,14 @@
         <li><a href="#approach">How I work</a></li>
         <li><a href="#work">Selected work</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#notes">Notes</a></li>
         <li><a href="#toolkit">Toolkit</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ol>
       <p class="aside">
-        Start with the outcomes. Open any engineering decision to see the mechanism,
-        verification method and trade-off behind it.
+        Project summaries stay short. Open the implementation notes only if you want
+        the technical details and trade-offs.
       </p>
     </aside>
 
@@ -634,7 +627,7 @@
 
       <section id="approach" class="reveal">
         <p class="kicker">Engineering lens</p>
-        <h2>Build the proof into the system</h2>
+        <h2>How I think about production systems</h2>
         <p>
           I start with a production question: <strong>how would we know if this stopped working?</strong>
           That changes the architecture. AI outputs need cited evidence and deterministic guards;
@@ -642,18 +635,18 @@
           needs evaluation splits that survive the real environment.
         </p>
         <p>
-          The work below leads with measured outcomes, then lets you open the decisions behind them.
-          Each decision includes the cost it introduced, because latency, accuracy and operational
-          complexity are engineering choices rather than footnotes.
+          I try to make failures visible and recovery paths explicit. The project notes below keep
+          the implementation details optional, including the trade-offs and the parts that needed
+          another iteration.
         </p>
       </section>
 
       <section id="work" class="reveal">
         <p class="kicker">Selected work</p>
-        <h2>Three production systems, measured end to end</h2>
+        <h2>Three systems I worked on in production</h2>
         <p class="section-note">
-          Scan the outcomes first. Open any decision for the mechanism, verification method and
-          trade-off I would explain to the engineer maintaining it next.
+          Each project starts with the problem and my scope. Open a decision only if you want the
+          mechanism, verification method and trade-off behind it.
         </p>
 
         <!-- ── VIA ── -->
@@ -1056,6 +1049,22 @@
         </div>
       </section>
 
+      <section id="notes" class="reveal">
+        <p class="kicker">Notes</p>
+        <h2>A weekly record, kept in Chinese</h2>
+        <p class="section-note">
+          Short, informal notes on what I built, what broke, and what I learned along the way.
+          The point is continuity, not polish.
+        </p>
+        <div class="writing-row">
+          <div>
+            <p><strong>Weekly build log on Xiaohongshu</strong></p>
+            <p class="account">Xiaohongshu ID · 2063539021ykw</p>
+          </div>
+          <button class="copy-handle" type="button" data-copy="2063539021ykw">Copy account ID</button>
+        </div>
+      </section>
+
       <section id="toolkit" class="reveal">
         <p class="kicker">Toolkit</p>
         <h2>What I reach for</h2>
@@ -1175,6 +1184,23 @@
       window.requestAnimationFrame(function () { spy(); ticking = false; });
     }, { passive: true });
     spy();
+
+    /* Copy the Xiaohongshu account ID without requiring a fragile profile URL. */
+    document.querySelectorAll('[data-copy]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var value = btn.getAttribute('data-copy');
+        if (!navigator.clipboard) {
+          btn.textContent = value;
+          return;
+        }
+        navigator.clipboard.writeText(value).then(function () {
+          btn.textContent = 'Copied';
+          window.setTimeout(function () { btn.textContent = 'Copy account ID'; }, 1800);
+        }).catch(function () {
+          btn.textContent = value;
+        });
+      });
+    });
   })();
 </script>
 
