@@ -36,6 +36,6 @@
     <text x="16" y="264" font-size="15" font-weight="700" fill="#F9F6EF">Liveness risk?</text>
   </g>
   <g font-family="Georgia, serif" fill="#4A4338">
-    <text x="44" y="449" font-size="15" font-style="italic">World-model-adjacent: learn a semantic transition in compact state space, then decode and verify.</text>
+    <text x="44" y="449" font-size="15" font-style="italic">Experiment: transform a latent vector, decode the result, then test what changed and what remained stable.</text>
   </g>
 </svg>

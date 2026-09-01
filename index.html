@@ -692,14 +692,14 @@
 
       <section id="research" class="reveal">
         <p class="kicker">NYU research</p>
-        <h2>Two studies of how models build internal worlds</h2>
+        <h2>Two experimental studies of internal representations</h2>
         <p class="section-note">
-          My research sits around multimodal-native systems: models that reason through aligned internal
-          representations rather than treating vision, language and geometry as disconnected inputs.
+          As a research assistant at NYU, I run experiments based on RoboRefer and ESCA. The first
+          investigates consistency across camera views; the second investigates changes in vector latent space.
         </p>
         <div class="research-thesis">
-          <span class="label">Shared question</span>
-          <p>What information survives when perception is compressed into tokens or latent states—and can we diagnose or control the transformation before the final output hides the failure?</p>
+          <span class="label">Research approach</span>
+          <p>Start from an existing research framework, isolate a representation-level question, then design controlled readouts and evaluation gates before changing the model.</p>
         </div>
 
         <div class="research-list">
@@ -709,11 +709,11 @@
               <figcaption>Cross-view diagnosis · representation readout · mask-aware gates</figcaption>
             </figure>
             <div class="research-copy">
-              <p class="research-meta">Sep 2025 – Present · Multimodal LLMs &amp; Embodied AI Research Lead</p>
-              <h3>RoboRefer — aligning vision with language-level reasoning</h3>
+              <p class="research-meta">Sep 2025 – Present · NYU Research Assistant</p>
+              <h3>RoboRefer experiments — cross-view consistency</h3>
               <p class="research-question">
-                I study whether a multimodal model preserves object correspondence as visual features are
-                projected toward the language model's semantic space—even when its final coordinate answer is wrong.
+                Based on the RoboRefer framework, I investigate whether a multimodal model preserves the
+                identity of the same object across camera views as visual features move toward the language model's semantic space.
               </p>
               <ul class="research-points">
                 <li>Compared final coordinate outputs with retrieval from visual tokens before and after the multimodal projector.</li>
@@ -726,21 +726,20 @@
 
           <article class="research-story">
             <figure class="research-figure">
-              <img src="assets/esca-threat-model.svg" width="760" height="500" loading="lazy" alt="Diagram of a transformer-based 3D facial expression attack evaluated against liveness and identity signals">
-              <figcaption>3D expression mapping · adversarial evaluation · authentication risk</figcaption>
+              <img src="assets/esca-threat-model.svg" width="760" height="500" loading="lazy" alt="Diagram of an ESCA experiment mapping expression changes between vectors in latent space before decoding and evaluation">
+              <figcaption>Vector latent space · expression transition · decode and evaluate</figcaption>
             </figure>
             <div class="research-copy">
-              <p class="research-meta">Oct 2025 – Present · Deep Learning Security Researcher</p>
-              <h3>Code Avatar / ESCA — learning transitions in latent space</h3>
+              <p class="research-meta">Oct 2025 – Present · NYU Research Assistant</p>
+              <h3>ESCA experiments — changes in vector latent space</h3>
               <p class="research-question">
-                An encoder compresses a face into a latent state; an expression-conditioned Transformer
-                predicts a transition to a new state; a decoder renders the result. I study whether those
-                transitions preserve identity while changing expression—and when that becomes a liveness risk.
+                Based on the ESCA project, I investigate how expression changes are represented as movement
+                between vectors in latent space, and whether those changes remain stable across identities and decoding.
               </p>
               <ul class="research-points">
                 <li>Modeled <code>z_neutral → z_expression</code> as a conditional latent-state transition using a lightweight Transformer with adaptive normalization.</li>
                 <li>Investigated whether expression directions are stable across identities or entangled in encoder-specific geometry, rather than assuming a universal coordinate system.</li>
-                <li>This is world-model-adjacent: it reasons through compact latent states and learned transitions, while remaining narrower than a full action-conditioned dynamics model.</li>
+                <li>Decoded the transformed vectors and evaluated expression change, identity preservation and liveness risk instead of treating latent distance alone as success.</li>
               </ul>
               <a class="research-link" href="https://github.com/Solvement/ESCA-3D-Adversarial-Attack" target="_blank" rel="noopener">View research repository</a>
             </div>
