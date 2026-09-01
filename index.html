@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Kevin Yang — software engineer building transaction backends and AI platforms where correctness under load is the hard part. M.S. Computer Engineering, NYU, May 2027.">
+<meta name="description" content="Kevin Yang — AI systems engineer researching multimodal reasoning, embodied AI and model security while building reliable production backends. M.S. Computer Engineering, NYU, May 2027.">
 <meta name="author" content="Kevin Yang">
 <link rel="canonical" href="https://solvement.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23F2EDE1%22%2F%3E%3Cpath%20d%3D%22M0%2021h64M0%2042h64M21%200v64M42%200v64%22%20stroke%3D%22%23235165%22%20stroke-opacity%3D%22.22%22%20stroke-width%3D%221.5%22%2F%3E%3Cpath%20d%3D%22M20%2016v32M20%2033l17-17M27%2026l14%2022%22%20stroke%3D%22%23235165%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22square%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E">
@@ -12,12 +12,12 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://solvement.github.io/">
 <meta property="og:title" content="Kevin Yang — AI Systems & Backend Engineer">
-<meta property="og:description" content="Kevin Yang — software engineer building transaction backends and AI platforms where correctness under load is the hard part. M.S. Computer Engineering, NYU, May 2027.">
+<meta property="og:description" content="Kevin Yang — AI systems engineer researching multimodal reasoning, embodied AI and model security while building reliable production backends. M.S. Computer Engineering, NYU, May 2027.">
 <meta property="og:image" content="https://solvement.github.io/assets/kevin-virtual-portrait.webp">
 <meta property="og:image:alt" content="Editorial virtual portrait representing Kevin Yang's work in AI systems and backend engineering">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kevin Yang — AI Systems & Backend Engineer">
-<meta name="twitter:description" content="Kevin Yang — software engineer building transaction backends and AI platforms where correctness under load is the hard part. M.S. Computer Engineering, NYU, May 2027.">
+<meta name="twitter:description" content="Kevin Yang — AI systems engineer researching multimodal reasoning, embodied AI and model security while building reliable production backends. M.S. Computer Engineering, NYU, May 2027.">
 
 <title>Kevin Yang</title>
 <script type="application/ld+json">
@@ -363,6 +363,42 @@
     background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
   }
 
+  /* ── Research stories ──────────────────────────────────────── */
+  .research-list { display: grid; gap: 0; }
+  .research-story {
+    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(18rem, .95fr);
+    gap: clamp(2rem, 5vw, 4.5rem); align-items: center;
+    padding: 3rem 0; border-top: 1px solid var(--rule);
+  }
+  .research-story:nth-child(even) .research-figure { order: 2; }
+  .research-figure { margin: 0; min-width: 0; }
+  .research-figure img {
+    display: block; width: 100%; height: auto; border: 1px solid var(--rule);
+    background: var(--paper-deep); box-shadow: 0 24px 48px -42px rgba(30,26,20,.65);
+  }
+  .research-figure figcaption {
+    font-family: var(--mono); font-size: .61rem; line-height: 1.55;
+    letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-top: .65rem;
+  }
+  .research-meta {
+    font-family: var(--mono); font-size: .65rem; line-height: 1.6;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--structure); margin: 0 0 .85rem;
+  }
+  .research-copy h3 { font-size: clamp(1.55rem, 3vw, 2.15rem); margin-bottom: .85rem; }
+  .research-question { font-size: 1.08rem; line-height: 1.52; color: var(--ink-soft); }
+  .research-points { list-style: none; padding: 0; margin: 1.25rem 0 1.45rem; }
+  .research-points li {
+    position: relative; padding: .72rem 0 .72rem 1.45rem; border-top: 1px solid var(--rule-soft);
+    color: var(--ink-soft); font-size: .96rem; line-height: 1.52;
+  }
+  .research-points li::before {
+    content: ""; position: absolute; left: 0; top: 1.22rem; width: .52rem; height: 2px; background: var(--structure);
+  }
+  .research-link {
+    display: inline-block; font-family: var(--mono); font-size: .68rem; letter-spacing: .09em;
+    text-transform: uppercase; padding-bottom: .2rem; border-bottom: 1px solid var(--structure);
+  }
+
   /* ── Projects ──────────────────────────────────────────────── */
   .project { display: flex; flex-direction: column; padding: 2.6rem 0; border-top: 1px solid var(--rule-soft); }
   .project:first-of-type { border-top: none; padding-top: 0; }
@@ -537,6 +573,8 @@
     .skill-row { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
     .writing-row { grid-template-columns: minmax(0, 1fr); align-items: start; }
     .copy-handle { justify-self: start; }
+    .research-story { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .research-story:nth-child(even) .research-figure { order: 0; }
   }
   @media (max-width: 560px) {
     .brand span { display: none; }
@@ -555,7 +593,7 @@
   <div class="wrap">
     <div class="brand">Kevin Yang <span>AI Systems / Backend</span></div>
     <nav class="topnav">
-      <a href="#work" class="hide-sm">Work</a>
+      <a href="#research" class="hide-sm">Research</a>
       <a href="#experience" class="hide-sm">Experience</a>
       <a href="mailto:ky2738@nyu.edu" class="hide-sm">Contact</a>
       <a href="Kevin_Yang_Resume.pdf" class="cta" target="_blank" rel="noopener">Résumé</a>
@@ -571,20 +609,20 @@
         <p class="availability">Open to 2027 new-grad opportunities</p>
         <h1>Kevin Yang</h1>
         <p class="lede">
-          I build production AI systems and high-throughput backends where
-          <em>correctness can be proven</em> — from auditable agent workflows to transaction paths
-          that preserve their invariants under burst load.
+          I diagnose multimodal models and build production AI systems where
+          <em>failure modes can be measured</em> — from embodied spatial reasoning and model security
+          to transaction paths that preserve their invariants under burst load.
         </p>
 
         <dl class="facts">
           <div class="fact"><dt>Graduating</dt><dd>May 2027</dd></div>
           <div class="fact"><dt>Degree</dt><dd>M.S. Computer Engineering, NYU</dd></div>
-          <div class="fact"><dt>Focus</dt><dd>AI Platform · Backend · Distributed Systems</dd></div>
+          <div class="fact"><dt>Focus</dt><dd>Multimodal AI · AI Systems · Backend</dd></div>
           <div class="fact"><dt>Mobility</dt><dd>New York · Open to relocating</dd></div>
         </dl>
 
         <nav class="links" aria-label="Primary links">
-          <a href="#work" class="primary">View selected work</a>
+          <a href="#research" class="primary">View NYU research</a>
           <a href="Kevin_Yang_Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
           <a href="https://www.linkedin.com/in/kevin021220/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/Solvement" target="_blank" rel="noopener">GitHub</a>
@@ -609,6 +647,7 @@
       <p class="label">Contents</p>
       <ol>
         <li><a href="#approach">How I work</a></li>
+        <li><a href="#research">NYU research</a></li>
         <li><a href="#work">Selected work</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#notes">Notes</a></li>
@@ -639,6 +678,59 @@
           the implementation details optional, including the trade-offs and the parts that needed
           another iteration.
         </p>
+      </section>
+
+      <section id="research" class="reveal">
+        <p class="kicker">NYU research</p>
+        <h2>Two ways I study where intelligent systems fail</h2>
+        <p class="section-note">
+          One asks whether a multimodal model can connect the same object across camera views.
+          The other tests whether realistic 3D facial motion can become an authentication attack surface.
+        </p>
+
+        <div class="research-list">
+          <article class="research-story">
+            <figure class="research-figure">
+              <img src="assets/roborefer-diagnostic.svg" width="760" height="500" loading="lazy" alt="Diagram of RoboRefer cross-view visual-token readouts and mask-aware evaluation gates">
+              <figcaption>Cross-view diagnosis · representation readout · mask-aware gates</figcaption>
+            </figure>
+            <div class="research-copy">
+              <p class="research-meta">Sep 2025 – Present · Multimodal LLMs &amp; Embodied AI Research Lead</p>
+              <h3>RoboRefer — locating the failure before adding more training</h3>
+              <p class="research-question">
+                I reframed cross-image object association as a diagnosis problem: does the vision model
+                already encode correspondence across views, even when the final coordinate answer is wrong?
+              </p>
+              <ul class="research-points">
+                <li>Compared final coordinate outputs with retrieval from visual tokens before and after the multimodal projector.</li>
+                <li>Designed exact-patch, radius-1, ground-truth-mask, center-in-mask, overlap and random-query null gates to separate point-level from object-level failure.</li>
+                <li>Ran readouts on 100 ScanNet++ samples. Negative baseline gates led us to pause premature QVR intervention training rather than optimize an unsupported hypothesis.</li>
+              </ul>
+              <a class="research-link" href="https://github.com/Solvement/RoboRefer-FineTuning" target="_blank" rel="noopener">View research repository</a>
+            </div>
+          </article>
+
+          <article class="research-story">
+            <figure class="research-figure">
+              <img src="assets/esca-threat-model.svg" width="760" height="500" loading="lazy" alt="Diagram of a transformer-based 3D facial expression attack evaluated against liveness and identity signals">
+              <figcaption>3D expression mapping · adversarial evaluation · authentication risk</figcaption>
+            </figure>
+            <div class="research-copy">
+              <p class="research-meta">Oct 2025 – Present · Deep Learning Security Researcher</p>
+              <h3>Code Avatar / ESCA — treating liveness as a security boundary</h3>
+              <p class="research-question">
+                I study a corner case in 3D face authentication: whether plausible expression changes can
+                satisfy liveness checks while preserving enough identity signal to create a spoofing risk.
+              </p>
+              <ul class="research-points">
+                <li>Built an adversarial evaluation framework around 3D facial expression deformations and liveness-detection vulnerabilities.</li>
+                <li>Designed Transformer-based robustness experiments while tracking the tension between attack effectiveness, expression plausibility and identity preservation.</li>
+                <li>Turned experimental failures into explicit evaluation criteria, connecting model behavior with product trust and authentication risk.</li>
+              </ul>
+              <a class="research-link" href="https://github.com/Solvement/ESCA-3D-Adversarial-Attack" target="_blank" rel="noopener">View research repository</a>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="work" class="reveal">
@@ -1075,7 +1167,8 @@
           <div class="skill-row"><dt>Data</dt><dd>PostgreSQL · MySQL · Redis (Lua, multi-level caching) · RocketMQ · Object storage · Versioned fact modeling</dd></div>
           <div class="skill-row"><dt>Performance</dt><dd>Tail-latency analysis · Hot-path contention removal · Thread-pool tuning · Load testing · CPU, memory and OOM profiling · TensorRT INT8/FP16 mixed precision</dd></div>
           <div class="skill-row"><dt>AI systems</dt><dd>Multi-agent orchestration · Tool and permission design · RAG with hybrid retrieval, RRF and cross-encoder reranking · Evaluation harness design · LangGraph · OpenAI SDK</dd></div>
-          <div class="skill-row"><dt>Machine learning</dt><dd>PyTorch · LoRA / SFT · DPO · YOLO · OpenCV · Backtesting and interval calibration</dd></div>
+          <div class="skill-row"><dt>Multimodal AI</dt><dd>VLM representation readouts · Cross-view visual grounding · Mask-aware evaluation · ScanNet++ · 3D facial model security</dd></div>
+          <div class="skill-row"><dt>Machine learning</dt><dd>PyTorch · LoRA / SFT · DPO · Transformer robustness experiments · YOLO · OpenCV · Backtesting and interval calibration</dd></div>
           <div class="skill-row"><dt>Infrastructure</dt><dd>Docker · Kubernetes · Azure · Linux · Git · CI regression gating</dd></div>
         </dl>
       </section>
@@ -1120,7 +1213,7 @@
       <a href="https://www.linkedin.com/in/kevin021220/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/Solvement" target="_blank" rel="noopener">GitHub</a>
     </nav>
-    <p class="colophon">Kevin Yang · New York · Updated August 2026</p>
+    <p class="colophon">Kevin Yang · New York · Updated September 2026</p>
   </div>
 </footer>
 

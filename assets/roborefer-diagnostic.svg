@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" role="img" aria-labelledby="title desc">
+  <title id="title">RoboRefer cross-view diagnostic pipeline</title>
+  <desc id="desc">Two views of a room feed visual tokens into pre-projector and post-projector readouts, followed by mask-aware evaluation gates.</desc>
+  <rect width="760" height="500" fill="#EAE3D3"/>
+  <g stroke="#235165" stroke-width="1" opacity=".18"><path d="M0 50h760M0 100h760M0 150h760M0 200h760M0 250h760M0 300h760M0 350h760M0 400h760M0 450h760"/><path d="M50 0v500M100 0v500M150 0v500M200 0v500M250 0v500M300 0v500M350 0v500M400 0v500M450 0v500M500 0v500M550 0v500M600 0v500M650 0v500M700 0v500"/></g>
+  <g font-family="Arial, sans-serif" fill="#1E1A14">
+    <text x="38" y="42" font-size="13" letter-spacing="2.3" fill="#235165">ROBOREFER / DIAGNOSTIC MAP</text>
+    <text x="38" y="72" font-size="22" font-weight="700">Is the correspondence signal already there?</text>
+  </g>
+  <g transform="translate(38 110)">
+    <rect width="205" height="168" fill="#F9F6EF" stroke="#BFB49D"/>
+    <path d="M18 121 82 76l57 17 47-49v104H18Z" fill="#D8CFBB"/>
+    <path d="m18 121 68-19 53 20 47-37" fill="none" stroke="#857B6B" stroke-width="2"/>
+    <rect x="55" y="78" width="56" height="44" fill="#31708A" opacity=".28"/>
+    <circle cx="83" cy="100" r="8" fill="#9C4A2A"/>
+    <text x="16" y="21" font-family="monospace" font-size="11" fill="#4A4338">QUERY VIEW / t1</text>
+    <text x="16" y="158" font-family="monospace" font-size="10" fill="#857B6B">referent: chair</text>
+  </g>
+  <g transform="translate(38 298)">
+    <rect width="205" height="152" fill="#F9F6EF" stroke="#BFB49D"/>
+    <path d="M18 105 70 48l53 30 63-32v86H18Z" fill="#D8CFBB"/>
+    <path d="m18 105 52-28 53 20 63-31" fill="none" stroke="#857B6B" stroke-width="2"/>
+    <path d="M122 71h46v42h-46z" fill="#31708A" opacity=".28" stroke="#235165" stroke-dasharray="4 4"/>
+    <text x="16" y="21" font-family="monospace" font-size="11" fill="#4A4338">TARGET VIEW / t3</text>
+    <text x="16" y="141" font-family="monospace" font-size="10" fill="#857B6B">same object, new camera</text>
+  </g>
+  <g fill="none" stroke="#235165" stroke-width="2"><path d="M260 194h73"/><path d="M260 370h73"/><path d="m325 187 8 7-8 7M325 363l8 7-8 7"/></g>
+  <g transform="translate(334 129)" font-family="Arial, sans-serif">
+    <rect width="170" height="286" fill="#235165"/>
+    <text x="18" y="31" font-size="11" letter-spacing="1.7" fill="#EAE3D3">VISUAL READOUTS</text>
+    <rect x="18" y="55" width="134" height="59" fill="#F2EDE1"/>
+    <text x="32" y="80" font-size="14" font-weight="700" fill="#1E1A14">Pre-projector</text>
+    <text x="32" y="99" font-size="10" fill="#857B6B">vision backbone tokens</text>
+    <path d="M85 114v33" stroke="#EAE3D3" stroke-width="2"/>
+    <rect x="18" y="147" width="134" height="59" fill="#F2EDE1"/>
+    <text x="32" y="172" font-size="14" font-weight="700" fill="#1E1A14">Post-projector</text>
+    <text x="32" y="191" font-size="10" fill="#857B6B">language-aligned tokens</text>
+    <text x="18" y="242" font-size="10" fill="#EAE3D3">compare retrieval with</text>
+    <text x="18" y="259" font-size="10" fill="#EAE3D3">final coordinate output</text>
+  </g>
+  <g transform="translate(540 111)" font-family="Arial, sans-serif">
+    <text x="0" y="16" font-size="11" letter-spacing="1.7" fill="#235165">EVALUATION GATES</text>
+    <g font-size="12" fill="#1E1A14">
+      <rect y="35" width="181" height="46" fill="#F9F6EF" stroke="#BFB49D"/><text x="14" y="63">Exact patch hit</text>
+      <rect y="91" width="181" height="46" fill="#F9F6EF" stroke="#BFB49D"/><text x="14" y="119">Radius-1 hit</text>
+      <rect y="147" width="181" height="46" fill="#F9F6EF" stroke="#BFB49D"/><text x="14" y="175">GT-mask / center hit</text>
+      <rect y="203" width="181" height="46" fill="#F9F6EF" stroke="#BFB49D"/><text x="14" y="231">Mask overlap fraction</text>
+      <rect y="259" width="181" height="46" fill="#9C4A2A"/><text x="14" y="287" fill="#F9F6EF">Random-query null test</text>
+    </g>
+    <text x="0" y="340" font-family="Georgia, serif" font-size="15" font-style="italic" fill="#4A4338">Negative gate → pause intervention</text>
+  </g>
+</svg>

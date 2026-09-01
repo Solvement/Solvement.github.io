@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" role="img" aria-labelledby="title desc">
+  <title id="title">ESCA 3D face liveness threat model</title>
+  <desc id="desc">A transformer maps expression changes into a 3D face representation, then evaluates liveness bypass and identity preservation as competing objectives.</desc>
+  <rect width="760" height="500" fill="#EAE3D3"/>
+  <g stroke="#235165" stroke-width="1" opacity=".18"><path d="M0 50h760M0 100h760M0 150h760M0 200h760M0 250h760M0 300h760M0 350h760M0 400h760M0 450h760"/><path d="M50 0v500M100 0v500M150 0v500M200 0v500M250 0v500M300 0v500M350 0v500M400 0v500M450 0v500M500 0v500M550 0v500M600 0v500M650 0v500M700 0v500"/></g>
+  <g font-family="Arial, sans-serif" fill="#1E1A14">
+    <text x="38" y="42" font-size="13" letter-spacing="2.3" fill="#235165">CODE AVATAR / THREAT MODEL</text>
+    <text x="38" y="72" font-size="22" font-weight="700">Can a plausible expression become an attack surface?</text>
+  </g>
+  <g transform="translate(45 126)" fill="none" stroke="#235165">
+    <ellipse cx="92" cy="120" rx="73" ry="99" fill="#F9F6EF" stroke="#BFB49D"/>
+    <path d="M47 80c20-48 77-48 94 0M53 159c23 27 55 27 78 0" stroke-width="2"/>
+    <path d="M55 107h35M96 107h35" stroke-width="5"/>
+    <path d="M93 111v35" stroke-width="2"/>
+    <g fill="#31708A" stroke="none"><circle cx="47" cy="80" r="4"/><circle cx="92" cy="48" r="4"/><circle cx="141" cy="80" r="4"/><circle cx="55" cy="107" r="4"/><circle cx="131" cy="107" r="4"/><circle cx="93" cy="146" r="4"/><circle cx="53" cy="159" r="4"/><circle cx="92" cy="179" r="4"/><circle cx="131" cy="159" r="4"/></g>
+    <text x="24" y="246" font-family="monospace" font-size="11" fill="#4A4338" stroke="none">NEUTRAL 3D LATENT</text>
+  </g>
+  <g fill="none" stroke="#235165" stroke-width="2"><path d="M230 246h66"/><path d="m288 239 8 7-8 7"/></g>
+  <g transform="translate(297 151)" font-family="Arial, sans-serif">
+    <rect width="174" height="192" fill="#235165"/>
+    <text x="19" y="31" font-size="11" letter-spacing="1.5" fill="#EAE3D3">TRANSFORMER MAPPER</text>
+    <g fill="#F2EDE1"><rect x="19" y="56" width="34" height="34"/><rect x="70" y="56" width="34" height="34"/><rect x="121" y="56" width="34" height="34"/><rect x="19" y="106" width="34" height="34"/><rect x="70" y="106" width="34" height="34"/><rect x="121" y="106" width="34" height="34"/></g>
+    <g stroke="#EAE3D3" opacity=".7"><path d="M36 73h102M36 123h102M36 73l102 50M138 73 36 123"/></g>
+    <text x="19" y="171" font-size="10" fill="#EAE3D3">expression-conditioned Δ</text>
+  </g>
+  <g fill="none" stroke="#235165" stroke-width="2"><path d="M471 246h67"/><path d="m530 239 8 7-8 7"/></g>
+  <g transform="translate(547 117)" font-family="Arial, sans-serif">
+    <rect width="174" height="80" fill="#F9F6EF" stroke="#BFB49D"/>
+    <text x="16" y="25" font-size="11" letter-spacing="1.2" fill="#235165">LIVENESS SIGNAL</text>
+    <text x="16" y="54" font-size="18" font-weight="700" fill="#1E1A14">EAR / MAR</text>
+    <rect y="105" width="174" height="80" fill="#F9F6EF" stroke="#BFB49D"/>
+    <text x="16" y="130" font-size="11" letter-spacing="1.2" fill="#235165">IDENTITY SIGNAL</text>
+    <text x="16" y="159" font-size="18" font-weight="700" fill="#1E1A14">Embedding match</text>
+    <rect y="210" width="174" height="80" fill="#9C4A2A"/>
+    <text x="16" y="235" font-size="11" letter-spacing="1.2" fill="#F9F6EF">RISK QUESTION</text>
+    <text x="16" y="264" font-size="15" font-weight="700" fill="#F9F6EF">Both pass?</text>
+  </g>
+  <g font-family="Georgia, serif" fill="#4A4338">
+    <text x="44" y="449" font-size="15" font-style="italic">Evaluate robustness without confusing visual plausibility with authentication safety.</text>
+  </g>
+</svg>
