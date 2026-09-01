@@ -384,6 +384,15 @@
     font-family: var(--mono); font-size: .65rem; line-height: 1.6;
     letter-spacing: .1em; text-transform: uppercase; color: var(--structure); margin: 0 0 .85rem;
   }
+  .research-thesis {
+    display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 1.5rem;
+    margin: 2.2rem 0 .2rem; padding: 1.2rem 0; border-top: 1px solid var(--rule);
+  }
+  .research-thesis .label {
+    font-family: var(--mono); font-size: .64rem; line-height: 1.6; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--structure);
+  }
+  .research-thesis p { margin: 0; color: var(--ink-soft); }
   .research-copy h3 { font-size: clamp(1.55rem, 3vw, 2.15rem); margin-bottom: .85rem; }
   .research-question { font-size: 1.08rem; line-height: 1.52; color: var(--ink-soft); }
   .research-points { list-style: none; padding: 0; margin: 1.25rem 0 1.45rem; }
@@ -575,6 +584,7 @@
     .copy-handle { justify-self: start; }
     .research-story { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
     .research-story:nth-child(even) .research-figure { order: 0; }
+    .research-thesis { grid-template-columns: minmax(0, 1fr); gap: .45rem; }
   }
   @media (max-width: 560px) {
     .brand span { display: none; }
@@ -682,11 +692,15 @@
 
       <section id="research" class="reveal">
         <p class="kicker">NYU research</p>
-        <h2>Two ways I study where intelligent systems fail</h2>
+        <h2>Two studies of how models build internal worlds</h2>
         <p class="section-note">
-          One asks whether a multimodal model can connect the same object across camera views.
-          The other tests whether realistic 3D facial motion can become an authentication attack surface.
+          My research sits around multimodal-native systems: models that reason through aligned internal
+          representations rather than treating vision, language and geometry as disconnected inputs.
         </p>
+        <div class="research-thesis">
+          <span class="label">Shared question</span>
+          <p>What information survives when perception is compressed into tokens or latent states—and can we diagnose or control the transformation before the final output hides the failure?</p>
+        </div>
 
         <div class="research-list">
           <article class="research-story">
@@ -696,10 +710,10 @@
             </figure>
             <div class="research-copy">
               <p class="research-meta">Sep 2025 – Present · Multimodal LLMs &amp; Embodied AI Research Lead</p>
-              <h3>RoboRefer — locating the failure before adding more training</h3>
+              <h3>RoboRefer — aligning vision with language-level reasoning</h3>
               <p class="research-question">
-                I reframed cross-image object association as a diagnosis problem: does the vision model
-                already encode correspondence across views, even when the final coordinate answer is wrong?
+                I study whether a multimodal model preserves object correspondence as visual features are
+                projected toward the language model's semantic space—even when its final coordinate answer is wrong.
               </p>
               <ul class="research-points">
                 <li>Compared final coordinate outputs with retrieval from visual tokens before and after the multimodal projector.</li>
@@ -717,15 +731,16 @@
             </figure>
             <div class="research-copy">
               <p class="research-meta">Oct 2025 – Present · Deep Learning Security Researcher</p>
-              <h3>Code Avatar / ESCA — treating liveness as a security boundary</h3>
+              <h3>Code Avatar / ESCA — learning transitions in latent space</h3>
               <p class="research-question">
-                I study a corner case in 3D face authentication: whether plausible expression changes can
-                satisfy liveness checks while preserving enough identity signal to create a spoofing risk.
+                An encoder compresses a face into a latent state; an expression-conditioned Transformer
+                predicts a transition to a new state; a decoder renders the result. I study whether those
+                transitions preserve identity while changing expression—and when that becomes a liveness risk.
               </p>
               <ul class="research-points">
-                <li>Built an adversarial evaluation framework around 3D facial expression deformations and liveness-detection vulnerabilities.</li>
-                <li>Designed Transformer-based robustness experiments while tracking the tension between attack effectiveness, expression plausibility and identity preservation.</li>
-                <li>Turned experimental failures into explicit evaluation criteria, connecting model behavior with product trust and authentication risk.</li>
+                <li>Modeled <code>z_neutral → z_expression</code> as a conditional latent-state transition using a lightweight Transformer with adaptive normalization.</li>
+                <li>Investigated whether expression directions are stable across identities or entangled in encoder-specific geometry, rather than assuming a universal coordinate system.</li>
+                <li>This is world-model-adjacent: it reasons through compact latent states and learned transitions, while remaining narrower than a full action-conditioned dynamics model.</li>
               </ul>
               <a class="research-link" href="https://github.com/Solvement/ESCA-3D-Adversarial-Attack" target="_blank" rel="noopener">View research repository</a>
             </div>
