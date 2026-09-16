@@ -12,7 +12,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://solvement.github.io/"/>
 <meta property="og:title" content="Kevin Yang — Backend &amp; AI Systems Engineer"/>
-<meta property="og:description" content="I build backends and AI systems — and make sure they’re actually correct. Recall 0.58→0.90 · 1,000+ QPS with zero oversells · inspector agreement 76→91%. NYU M.S. ’27."/>
+<meta property="og:description" content="Explore my engineering work: reliable AI workflows, transactional backend systems, and a data flywheel for production vision. NYU M.S. ’27."/>
 <meta property="og:image" content="https://solvement.github.io/assets/og-card.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -80,6 +80,7 @@
 
     <div class="hero-main">
       <div class="hero-copy">
+        <img class="hero-portrait" src="assets/kevin-portrait.jpg" width="1280" height="1280" alt="Kevin Yang" fetchpriority="high"/>
         <h1 class="hero-name">Kevin Yang</h1>
         <p class="hero-statement">I build backends and AI systems — and make sure they’re <em>actually correct</em>.</p>
 
@@ -90,10 +91,10 @@
           <a href="mailto:ky2738@nyu.edu">ky2738@nyu.edu</a>
         </div>
       </div>
-      <ul class="proof" aria-label="Headline results">
-        <li><a href="#via"><span class="val">0.58 → 0.90</span><span class="where">VIA · Yanfeng</span><span class="cap">Retrieval recall@10, evidence-gated agents</span></a></li>
-        <li><a href="#seckill"><span class="val">1,000+ QPS</span><span class="where">Seckill · Capgemini</span><span class="cap">P99 &lt; 300 ms, zero oversells</span></a></li>
-        <li><a href="#nio"><span class="val">76% → 91%</span><span class="where">Inspection · NIO</span><span class="cap">Agreement with senior inspectors</span></a></li>
+      <ul class="work-entry-list" aria-label="Explore three engineering projects">
+        <li><a href="#via"><span class="entry-label">01 / Yanfeng <span aria-hidden="true">↗</span></span><h2>Reliable AI Workflows</h2><p>Long-running tasks that recover, with evaluation gates and safe releases.</p><span class="entry-flow">Workflow → State → Evaluation → Release</span></a></li>
+        <li><a href="#seckill"><span class="entry-label">02 / Capgemini <span aria-hidden="true">↗</span></span><h2>Transactional Backend Systems</h2><p>Inventory consistency, asynchronous orders, and recovery when things fail.</p><span class="entry-flow">API → Inventory → Queue → Order</span></a></li>
+        <li><a href="#nio"><span class="entry-label">03 / NIO <span aria-hidden="true">↗</span></span><h2>Data Flywheel <span lang="zh">数据飞轮</span></h2><p>Turn inspection feedback into better data, post-training, and evaluation.</p><span class="entry-flow">Data → ETL → Post-training → Evaluation ↺</span></a></li>
       </ul>
     </div>
 
@@ -199,7 +200,7 @@
   <article class="project" id="nio">
     <div class="project-copy">
       <p class="project-label">03 / Production vision · NIO · 2024</p>
-      <h3>Expert judgment.<br/>Measurable progress.</h3>
+      <h3>Data flywheel.<br/>From feedback to improvement.</h3>
       <p class="context">Bring automated visual inspection closer to senior inspectors’ judgment, and prove it on the line.</p>
       <p class="role">I owned post-training and the evaluation loop, and partnered with the line team on deployment.</p>
       <p class="stackline"><strong>PyTorch</strong> · LoRA SFT + <strong>DPO</strong> · TensorRT · Docker</p>
