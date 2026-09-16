@@ -22,7 +22,14 @@ export function cinematicIntro(host) {
       const strip=w/3;
       for(let i=-1;i<5;i++) {
         const im=images[(i+5+Math.floor(t*.65))%images.length], x=i*strip-(t*100)%strip;
-        if(im.complete && im.naturalWidth) c.drawImage(im,x,Math.sin(t+i)*h*.08-h*.15,strip+6,h*1.3);
+        if(im.complete && im.naturalWidth && im.naturalHeight) {
+          const width = strip + 6, height = h * 1.3;
+          // Cover each moving panel without distorting the source image.
+          const scale = Math.max(width / im.naturalWidth, height / im.naturalHeight);
+          const sw = width / scale, sh = height / scale;
+          c.drawImage(im, (im.naturalWidth - sw) / 2, (im.naturalHeight - sh) / 2,
+            sw, sh, x, Math.sin(t+i)*h*.08-h*.15, width, height);
+        }
         c.fillStyle='rgba(5,12,20,.3)'; c.fillRect(x,0,strip,h);
         c.strokeStyle='#bf965c'; c.lineWidth=2; c.strokeRect(x,0,strip,h);
       }
