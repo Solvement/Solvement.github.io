@@ -1,0 +1,39 @@
+{
+  "_readme": "Weekly notes index. One object per Xiaohongshu note. Fill `url` with the note's share link (https://www.xiaohongshu.com/explore/<id>). `date` is YYYY-MM-DD or null. `chars` is the 全文字数 shown on the cover. Series: internship | jobsearch | essay | interview.",
+  "account": "2063539021ykw",
+  "since": "2025-08-16",
+  "series": {
+    "internship": { "label": "Internship weekly", "zh": "北美实习周记" },
+    "jobsearch": { "label": "Job-search log", "zh": "27 届秋招" },
+    "essay": { "label": "Essays", "zh": "长文" },
+    "interview": { "label": "Interview notes", "zh": "面经" }
+  },
+  "entries": [
+    { "series": "interview", "title": "阿里淘天一面", "date": null, "chars": null, "minutes": null, "url": null,
+      "summary": "First-round interview with Alibaba Taotian's business-technology and supply-chain team: what was asked, how I answered, and what I would prepare differently." },
+    { "series": "essay", "title": "来纽约这一年零十天：跑完第一圈以后", "date": null, "chars": 4703, "minutes": 15, "url": null,
+      "summary": "One year and ten days in New York. Re-reading the log I have kept since 16 August 2025 — near-daily at first, then once or twice a week — and what the first lap changed." },
+    { "series": "essay", "title": "无名，无题", "date": null, "chars": 2615, "minutes": 6, "url": null,
+      "summary": "Typed by hand at 9:11 on a Monday in Bobst Library, after OAs at Baidu, Alibaba and a US startup: what a job-search season feels like to a CS student who loves AI." },
+    { "series": "jobsearch", "title": "27届 ai 秋招 day4", "date": null, "chars": null, "minutes": null, "url": null, "video": true,
+      "summary": "Day 4 of building an AI-assisted job-search stack: what the pipeline produced, what broke, and what I changed." },
+    { "series": "jobsearch", "title": "27届秋招ai全栈 day3", "date": null, "chars": null, "minutes": null, "url": null, "video": true,
+      "summary": "Day 3: wiring the pieces together — job discovery, answer policy, résumé tailoring — and where a human still has to decide." },
+    { "series": "jobsearch", "title": "8/10 27秋招 day2", "date": "2026-08-10", "chars": null, "minutes": null, "url": null, "video": true,
+      "summary": "Day 2: the dashboard comes up; a rule that the run stops when the state is uncertain and reports back to Codex." },
+    { "series": "jobsearch", "title": "秋招day1 ai全栈从头开始", "date": "2026-08-09", "chars": null, "minutes": null, "url": null, "video": true,
+      "summary": "Day 1 of the 2027 cycle: starting the AI-assisted job-search stack from scratch, and what it should and should not automate." },
+    { "series": "internship", "title": "北美暑期实习最后一周（秋招最后还是要来了）", "date": null, "chars": null, "minutes": null, "url": null,
+      "summary": "The last week of the summer internship: what shipped, what did not, and the job-search season arriving whether I am ready or not." },
+    { "series": "internship", "title": "北美实习第6-7周", "date": null, "chars": 2319, "minutes": 7, "url": null,
+      "summary": "Weeks 6–7, work edition: finding a direction between forecasting and agents. Why consultancies can make predictions companies cannot (they have a method), and what a more precise, recordable, reproducible version of that looks like." },
+    { "series": "internship", "title": "北美实习第5周：agent还在骑马来的路上", "date": "2026-06-21", "chars": null, "minutes": null, "url": null,
+      "summary": "Week 5, 21 June: Dragon Boat Festival and Juneteenth on the same day; the agent is still riding in on horseback; a long weekend drive to Best Buy and the outlets." },
+    { "series": "internship", "title": "实习第 4 周 | AI 不是魔法，数据才是现实", "date": null, "chars": 4583, "minutes": 16, "url": null,
+      "summary": "Week 4: AI is not magic, data is the reality. A week where the data work outweighed the model work, and what that taught me about where the effort actually goes." },
+    { "series": "internship", "title": "北美实习周记 · 第三周", "date": null, "chars": 2883, "minutes": 9, "url": null,
+      "summary": "Week 3, written on a Sunday night after a week of doom-scrolling and football: the state of the week, and why the days I skip writing are the days worth writing about." },
+    { "series": "internship", "title": "北美实习第二周", "date": "2026-06-12", "chars": 2192, "minutes": 7, "url": null,
+      "summary": "Week 2, Friday 12 June, 9 pm. A voice memo that never recorded means the week gets written again from scratch: the AI teammate, Walmart walks and the first real tasks." }
+  ]
+}

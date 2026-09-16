@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "esbuild assets/motion.js --bundle --minify --outfile=assets/motion.bundle.js",
+    "graph": "node scripts/build-graph.mjs"
+  },
+  "dependencies": {
+    "d3-force": "^3.0.0",
+    "d3-geo": "^3.1.1",
+    "esbuild": "^0.25.10",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  }
+}
